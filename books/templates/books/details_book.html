@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ book.name }}{% endblock %}
+
+{% block content %}
+<div class="container mt-5 bg-gray-100 p-6 rounded-lg shadow-md">
+    {% if messages %}
+        <div class="alert alert-danger text-center" role="alert">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <div class="md:flex">
+        <div class="md:w-1/2 flex items-center justify-center mb-4">
+            {% if book.image %}
+                <img src="{{ book.image.url }}" alt="{{ book.name }} Image" class="w-full md:w-2/3 h-auto rounded-lg shadow-md">
+            {% else %}
+                <p>No image available.</p>
+            {% endif %}
+        </div>
+        <div class="md:w-1/2 md:ml-4">
+            <h1 class="text-4xl font-bold mb-4">{{ book.title }}</h1>
+            <p class="text-gray-800">{{ book.description }}</p>
+            <p class="mt-2"><strong>Price:</strong> ${{ book.price }}</p>
+
+            {% if user.is_authenticated %}
+                {% if user in book.borrowers.all %}
+                    <form method="post" action="" class="mt-4">
+                        {% csrf_token %}
+                        <div class="text-center">
+                            <button name="return_book" type="submit" class="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600">Return</button>
+                        </div>
+                    </form>
+                {% else %}
+                    <form method="post" action="" class="mt-4">
+                        {% csrf_token %}
+                        <div class="text-center">
+                            <button name="borrow_now" type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600">Borrow Now</button>
+                        </div>
+                    </form>
+                {% endif %}
+            {% else %}
+                <p class="mt-4"><a href="{% url 'login' %}" class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600">Login</a> to borrow or return this book.</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="card mt-4 bg-white rounded-lg overflow-hidden shadow-md">
+        <h5 class="p-3 bg-blue-500 text-white rounded-t-lg">Total Comments: {{ comments | length }}</h5>
+        {% for comment in comments %}
+            <div class="card-body border-b m-2 p-4">
+                <h6 class="text-gray-600">{{ comment.created_on }}</h6>
+                <p class="text-lg font-semibold">{{ comment.name }}</p>
+                <p class="text-blue-500"><strong>Email:</strong> <a class="text-blue-500" href="mailto:{{ comment.email }}">{{ comment.email }}</a></p>
+                <p class="text-gray-800">{{ comment.body }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% if user in book.borrowers.all %}
+    <!-- Display Comment Form only if the user has borrowed the book -->
+    <div class="card m-2 bg-gray-500 p-6 text-center">
+        <div class="card-body">
+            <form method="post">
+                <h1>Add Comment</h1>
+                {% csrf_token %}
+                {{comment_form | crispy}}
+                <button name="comment" type="submit" class="bg-yellow-500 text-white px-4 py-2 rounded-full hover:bg-yellow-600">Submit</button>
+            </form>
+        </div>
+    </div>
+{% endif %}
+</div>
+{% endblock %}

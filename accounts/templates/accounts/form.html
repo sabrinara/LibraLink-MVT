@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+
+<div class="w-full flex mt-5 justify-center ">
+    <div class="bg-white w-5/12 rounded-lg">
+        <div class="text-center">
+            <h2 class="font-bold text-5xl text-black">Change Your Password</h2>
+        </div>
+
+        <form method="post" class="px-8 pt-6 pb-8 mb-4">
+            {% csrf_token %}
+            <!-- {% if form.errors %}
+            <div class="text-red-500 text-sm mb-4">
+                {{ form.errors }}
+            </div>
+            {% endif %} -->
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="id_old_password">
+                    Old Password
+                </label>
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight border rounded-md border-gray-500 focus:outline-none focus:shadow-outline"
+                    name="old_password" id="old_password" type="password" required placeholder="Old Password">
+                
+                {% if form.old_password.errors %}
+                <p class="text-red-500 text-xs italic">{{ form.old_password.errors.0 }}</p>
+                {% endif %}
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="id_new_password1">
+                    New password:
+                </label>
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight border rounded-md border-gray-500 focus:outline-none focus:shadow-outline"
+                    name="new_password1" id="new_password1" type="password" required placeholder="New Password">
+                {% if form.new_password1.errors %}
+                <p class="text-red-500 text-xs italic">{{ form.new_password1.errors.0 }}</p>
+                {% endif %}
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="id_new_password2">
+                    New password:
+                </label>
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight border rounded-md border-gray-500 focus:outline-none focus:shadow-outline"
+                    name="new_password2" id="new_password2" type="password" required placeholder="Confirm New Password">
+
+                    {% if form.new_password2.errors %}
+                    <p class="text-red-500 text-xs italic">{{ form.new_password2.errors.0 }}</p>
+                    {% endif %}
+            </div>
+
+            <div class="flex w-full justify-center">
+                <button
+                    class="bg-blue-900 text-white hover:text-blue-900 hover:bg-white border border-blue-900 font-bold px-4 py-2 rounded-lg"
+                    type="submit">
+                    Submit
+                </button>
+            </div>
+        </div>
+
+{% endblock %}
