@@ -1,61 +1,27 @@
 {% extends 'base.html' %} 
 {% load static %} 
 
-{% block head_title %}Library Management System{% endblock %} 
+{% block head_title %}LibraLink{% endblock %} 
 {% block content %}
 <div class="container mx-auto flex flex-col md:flex-row items-center my-12 md:my-24">
-  
-    <div class="flex flex-col w-full lg:w-1/2 justify-center items-start pt-12 pb-24 px-6 bg-white rounded-2xl bg-opacity-70 mx-3">
-        <h1 class="font-bold text-4xl my-4">Welcome to Library </h1>
-        <p class="leading-normal mb-4">
-            Library is an online library management system that allows you to manage your library. 
-        </p>
-    </div>
-
     <div class="w-full lg:w-1/2 lg:py-6 text-center ">
         <img class="rounded-2xl" src="{% static '../static/img.jpg' %}" />
     </div>
-</div>
 
-<div class="bg-gray-800 text-white py-4">
-    <div class="container mx-auto flex flex-col items-center justify-between p-2">
-        <h2 class="text-2xl font-bold">Categories</h2>
-        <div class="flex flex-wrap space-x-4 space-y-2">
-            <a href="{% url 'home' %}" class="hover:underline p-2 bg-blue-900 rounded font-bold">All Categories</a>
-            {% for category in categories %}
-                <a href="{% url 'books_filter' book_category=category %}" class="hover:underline font-bold p-2 bg-blue-900 rounded">{{ category }}</a>
-            {% endfor %}
-        </div>
+    <div class="flex flex-col w-full lg:w-1/2 justify-center items-center pt-10 pb-20 px-6 bg-white rounded-2xl bg-opacity-70 mx-3">
+        <h1 class="font-bold text-4xl my-4 text-blue-500">Welcome to LibraLink </h1>
+        <p class="leading-normal ">
+            Streamlining Knowledge Access with our Online Library Management Website. LibraLink is your digital gateway to a vast repository of books, journals, and resources, offering a user-friendly interface for seamless browsing, borrowing, and returning. Experience the convenience of real-time catalog updates, personalized recommendations, and interactive features that enhance your reading journey. LibraLink's robust management system ensures efficient book tracking, membership management, and resource allocation. Join our virtual library community and explore the world of knowledge at your fingertips with LibraLink – where learning meets innovation.
+        </p>
     </div>
+
+   
 </div>
 
-<div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 my-8">
-    {% for book in books %}
-        <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
-            {% if book.image %}
-                <img src="{{ book.image.url }}" alt="{{ book.title }} Image" class="w-full h-48 object-cover">
-            {% else %}
-                <p class="h-48 bg-gray-300 flex items-center justify-center">No image available.</p>
-            {% endif %}
-
-            <div class="p-4">
-                <h2 class="font-bold text-lg mb-2">{{ book.title }}</h2>
-                <p class="text-gray-600 mb-4">{{ book.description }}</p>
-                <p class="text-blue-500 font-bold">${{ book.price }}</p>
-                <p class="text-gray-500">{{ book.category }}</p>
-            </div>
-            <a href="{% url 'details_book' book_id=book.id %}" class="mb-2 block text-center bg-blue-500 text-white py-2 px-4 mt-2 mx-4 rounded-full transition duration-300 ease-in-out hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue">
-                Details
-            </a>
-        </div>
-    {% endfor %}
+<div class="flex mb-10"> 
+    {% include 'all_books.html' %} 
+    {% include 'category.html' %}
 </div>
 
-
-<script>
-    function submitForm() {
-        document.getElementById("categoryFilterForm").submit();
-    }
-</script>
 
 {% endblock %}

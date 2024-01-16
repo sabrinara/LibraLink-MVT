@@ -12,5 +12,5 @@ def home(request, book_category=None):
     bookCategory = book_category
     if book_category:
         books = books.filter(categories=bookCategory)
-
+        print(books.category)
     return render(request, 'index.html', {'books': books, 'categories': categories})

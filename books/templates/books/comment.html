@@ -1,0 +1,25 @@
+
+{% load crispy_forms_tags %}
+<div class="card mt-4 m-2 bg-white rounded overflow-hidden shadow-md">
+    <h5 class="bg-blue-300 t rounded p-4 m-2">Total Comments: {{ comments | length }}</h5>
+    {% for comment in comments %}
+        <div class="card-body border-b m-2 p-4">
+            <h6 class="text-gray-600">{{ comment.created_on }}</h6>
+            <p class="text-lg font-semibold">{{ comment.name }}</p>
+            <p class="text-blue-500"><strong>Email:</strong> <a class="text-blue-500" href="mailto:{{ comment.email }}">{{ comment.email }}</a></p>
+            <p class="text-gray-800">{{ comment.body }}</p>
+        </div>
+    {% endfor %}
+</div>
+{% if user in book.borrowers.all %}
+<div class="card m-2 p-10 text-center bg-blue-300">
+    <div class="card-body">
+        <form method="post">
+            <h1>Add Comment</h1>
+            {% csrf_token %}
+            {{comment_form | crispy}}
+            <button name="comment" type="submit" class="bg-blue-700 text-white px-4 py-2 rounded hover:bg-yellow-600">Submit</button>
+        </form>
+    </div>
+</div>
+{% endif %}

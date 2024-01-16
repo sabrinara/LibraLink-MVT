@@ -1,0 +1,10 @@
+<div class="w-1/4 bg-blue-300 rounded p-4 mx-2">
+    <div class="container mx-auto flex flex-col items-start justify-between p-2">
+        <div class="space-x-4 space-y-2">
+            <a href="{% url 'home' %}" class="block text-3xl font-bold text-center">All Categories</a>
+            {% for category in categories %}
+                <a href="{% url 'books_filter' book_category=category %}" class="block bg-blue-500 hover:bg-blue-900 font-semibold text-white p-2  rounded">{{ category }}</a>
+            {% endfor %}
+        </div>
+    </div>
+</div>

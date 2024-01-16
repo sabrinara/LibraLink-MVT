@@ -1,0 +1,28 @@
+<div class="container w-3/4 grid grid-cols-1 md:grid-cols-2 gap-2 ">
+    {% for book in books %}
+    <div class="max-w-sm w-full lg:max-w-full lg:flex">
+    <div class="flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" >
+        {% if book.image %}
+            <img src="{{ book.image.url }}" alt="{{ book.title }} Image" class="w-full h-48 md:h-64 object-cover">
+        {% else %}
+            <p class="h-48 bg-gray-300 flex items-center justify-center">No image available.</p>
+        {% endif %}
+    </div>
+    <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal h-48 md:h-64">
+      <div class="mb-4">
+        <h2 class="font-bold text-lg mb-2">{{ book.title }}</h2>
+        <p class=" mb-1">{{ book.description }}</p>
+        <p class="text-red-500 font-bold">Price:{{ book.price }}$</p>
+        <p class="">Category: {{ book.categories }}</p>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
+<script>
+    function submitForm() {
+        document.getElementById("categoryFilterForm").submit();
+    }
+</script>
+
+
