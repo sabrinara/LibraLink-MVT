@@ -13,13 +13,14 @@
 
 <div class="bg-white px-3 py-4 rounded-xl my-6">
 
-    <div class="flex items-center justify-between ">
-        <h4 class="font-bold text-3xl text-left pb-5">Account NO: {{request.user.account.account_number}}</h4>
-        <a href="{% url 'password_change' %}"
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-            Change Password
-        </a>
-    </div>
+        <div class="flex items-center justify-between ">
+            <h4 class="font-bold bg-blue-200 px-4 rounded text-2xl text-center pb-2 ml-20">
+                Account: {{request.user.account.account_no}}
+            </h4>
+            <a href="{% url 'change_pass' %}" class="bg-blue-700 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mr-20">
+                Change Password
+            </a>
+        </div>
     <h1 class="font-bold text-3xl text-center pb-5">Update Profile Information</h1>
 
     <div class="w-full mt-10">
@@ -123,8 +124,8 @@
                     {% endfor %} {% endif %}
                 </div>
             </div>
-            <div class="flex items-center justify-between">
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+            <div class="flex items-center justify-center">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold text-center py-2 px-20 rounded hover:bg-blue-900" type="submit">
                     Update
                 </button>
             </div>

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block head_title %}Banking System{% endblock %}
+{% block head_title %}LibraLink - Profile{% endblock %}
 
 {% block content %}
 <div class="bg-white p-4 rounded-xl my-6">
@@ -27,52 +27,6 @@
   </ul>
 </div>
 
-<div class="container mt-5">
-    {% if books %}
-    <h2 class="text-center text-2xl font-bold mb-4">Bought Books:</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {% for book in books %}
-        <div class="max-w-sm bg-white rounded overflow-hidden shadow-lg">
-            {% if book.image %}
-            <img src="{{ book.image.url }}"
-                 alt="{{ book.title }} Image"
-                 class="w-full h-48 object-cover">
-            {% else %}
-            <div class="bg-gray-300 w-full h-48 flex items-center justify-center">
-                <p class="text-gray-500">No Image Available</p>
-            </div>
-            {% endif %}
-            <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2">{{ book.title }}</div>
-                <p class="text-gray-700 text-base ">
-                    {{ book.description }}
-                </p>
-                <div class="mt-4 flex justify-between">
-                    <div>
-                        <p class="text-gray-600">
-                            <strong>Category:</strong> {{ book.category }}
-                        </p>
-                        <p class="text-gray-600">
-                            <strong>Price:</strong> ${{ book.price }}
-                        </p>
-                    </div>
-                    <div class="flex items-end">
-                        <a href="{% url 'details_book' book.id %}"
-                           class="btn-blue">
-                            View Details
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-    {% else %}
-    <div class="h-70vh flex justify-content-center items-center">
-        <h1 class="text-2xl">No bought books yet.</h1>
-    </div>
-    {% endif %}
-    
-</div>
+{% include 'accounts/borrow_books.html' %}
 
 {% endblock %}
