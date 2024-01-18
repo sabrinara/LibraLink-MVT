@@ -8,14 +8,17 @@
             <p class="h-48 bg-gray-300 flex items-center justify-center">No image available.</p>
         {% endif %}
     </div>
-    <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal h-48 md:h-64">
-      <div class="mb-4">
+    <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-2 flex flex-col justify-between leading-normal h-48 md:h-64">
+      <div class="mb-2">
         <h2 class="font-bold text-lg mb-2">{{ book.title }}</h2>
         <p class=" mb-1">{{ book.description }}</p>
         <p class="text-red-500 font-bold">Price:{{ book.price }}$</p>
-        <p class="">Category: {{ book.categories }}</p>
+        <p class="mb-3">Category: {{ book.categories }}</p>
+        <a href="{% url 'details_book' book.id %}" class="text-white bg-blue-600 hover:bg-green-800 px-4 py-2 rounded">View Details</a>
       </div>
+      
     </div>
+    
   </div>
 {% endfor %}
 </div>

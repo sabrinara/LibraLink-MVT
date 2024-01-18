@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from .constants import ACCOUNT_TYPE, GENDER_TYPE
+from .constants import GENDER_TYPE
 # Create your models here.
 
 class UserLibraryAccount(models.Model):
