@@ -23,7 +23,7 @@ from .models import UserLibraryAccount
 
 class UserRegistrationView(FormView):
     form_class = UserRegistrationForm
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('login')
     template_name = 'accounts/registration.html'
 
     def form_valid(self, form):
