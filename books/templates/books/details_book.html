@@ -4,6 +4,7 @@
 {% block title %}{{ book.name }}{% endblock %}
 
 {% block content %}
+{% if user.is_authenticated %}
 <div class="container mt-5 bg-gray-100 p-6 rounded-lg shadow-md">
     {% if messages %}
         <div class="alert alert-danger text-center" role="alert">
@@ -51,4 +52,9 @@
     {% include 'books/comment.html' %}
     
 </div>
+{% else %}
+<div class="container mt-5 bg-white text-center text-3xl p-6 rounded-lg shadow-md">
+    <p>You are not logged in. Please <a href="{% url 'login' %}" class="text-blue-800">login</a> to continue.</p>
+</div>
+{% endif %}
 {% endblock %}
