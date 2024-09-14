@@ -59,7 +59,7 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    
+
 }
 
 .img-box img {
@@ -76,12 +76,17 @@ body {
     z-index: 2;
     color: #ffffff;
     text-align: left;
+
 }
 
 .info-item h2 {
     font-size: 3rem;
     margin-bottom: 1rem;
-    color: #ffffff;
+    color: #052b4e;
+    background-color: #ffffff;
+    opacity: 0.8;
+    padding: 10px 20px;
+    font-weight: 800;
 }
 
 .info-item p {
@@ -89,6 +94,9 @@ body {
     line-height: 1.4;
     margin-bottom: 1.5rem;
     color: #ffffff;
+    background-color: #052b4e;
+    opacity: 0.5;
+    padding: 10px 20px;
 }
 
 .btn {
@@ -159,6 +167,10 @@ body {
         text-align: start;
         transform: translateY(-40%);
         padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .info-item h2 {
