@@ -10,6 +10,10 @@
         </title>
         <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 
+        <link rel="stylesheet" href="{% static '../static/style.css' %}">
+
+        <link rel="stylesheet" href="{% static '../static/script.js' %}">
+
         {% block head_extra %}{% endblock %}
         <style>
             footer {
@@ -19,10 +23,10 @@
             }
         </style>
     </head>
-    <body class="bg-blue-400">
+    <body class="bg-slate-50">
         {% include 'navbar.html' %}
         {% block body %}
-            <div class="lg:container lg:mx-auto" id="main">
+            <div class=" lg:mx-auto" >
                 {% include 'messages.html' %}
                 {% block content %}
                 {% endblock %}
@@ -30,6 +34,8 @@
             {% include 'footer.html' %}
 
         {% endblock %}
+
+        <script src="{% static 'script.js' %}"></script>
     </body>
 
 </html>

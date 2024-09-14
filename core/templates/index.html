@@ -3,22 +3,84 @@
 
 {% block head_title %}LibraLink{% endblock %} 
 {% block content %}
-<div class="container mx-auto flex flex-col md:flex-row items-center my-12 md:my-24">
-    <div class="w-full lg:w-1/2 lg:py-6 text-center ">
+<div class="" >
+    <!-- <div class="w-full lg:w-1/2 lg:py-6 text-center ">
         <img class="rounded-2xl" src="{% static '../static/img.jpg' %}" />
+    </div> -->
+    <!-- new add  -->
+    <div class="carousel">
+        <div class="item active">
+            <div class="img-box">
+                <img src="{% static '../static/img.jpg' %}" alt="Leopard Lily - Nature Banner" class="">
+            </div>
+            <div class="info-box">
+                <div class="info-slider">
+                    <div class="info-item">
+                        <h2>Leopard Lily</h2>
+                        <p>The symbol of strength and resilience. Purify your <br> home with leopard lily plants.</p>
+                        <a href="#" class="btn">View More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="item">
+            <div class="img-box">
+                <img src="{% static '../static/img2.jpg' %}" alt="Leopard Lily - Nature Banner">
+            </div>
+            <div class="info-box">
+                <div class="info-slider">
+                    <div class="info-item">
+                        <h2>Calathea Plant</h2>
+                        <p>It is a long established fact a reader by the
+                            <br>readable content looking.
+                        </p>
+                        <a href="#" class="btn">View More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="item">
+            <div class="img-box">
+                <img src="{% static '../static/img.jpg' %}" alt="Leopard Lily - Nature Banner">
+            </div>
+            <div class="info-box">
+                <div class="info-slider">
+                    <div class="info-item">
+                        <h2>Spring Plant</h2>
+                        <p>We’re Spring Plant, When you’ve got your health,
+                            <br>
+                            you got everything.
+                        </p>
+                        <a href="#" class="btn">View More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <ul class="thumb ">
+            <li class="active"><img src="{% static '../static/img.jpg' %}" alt="Thumbnail for Leopard Lily"></li>
+            <li><img src="{% static '../static/img2.jpg' %}" alt="Thumbnail for Leopard Lily"></li>
+            <li><img src="{% static '../static/img.jpg' %}" alt="Thumbnail for Leopard Lily"></li>
+        </ul>
     </div>
-
-    <div class="flex flex-col w-full lg:w-1/2 justify-center items-center pt-10 pb-20 px-6 bg-white rounded-2xl bg-opacity-70 mx-3">
+<!-- new add end  -->
+    <!-- <div class="flex flex-col w-full lg:w-1/2 justify-center items-center pt-10 pb-20 px-6 bg-white rounded-2xl bg-opacity-70 mx-3">
         <h1 class="font-bold text-4xl my-4 text-blue-500">Welcome to LibraLink </h1>
         <p class="leading-normal ">
             Streamlining Knowledge Access with our Online Library Management Website. LibraLink is your digital gateway to a vast repository of books, journals, and resources, offering a user-friendly interface for seamless browsing, borrowing, and returning. Experience the convenience of real-time catalog updates, personalized recommendations, and interactive features that enhance your reading journey. LibraLink's robust management system ensures efficient book tracking, membership management, and resource allocation. Join our virtual library community and explore the world of knowledge at your fingertips with LibraLink – where learning meets innovation.
         </p>
-    </div>
+    </div> -->
 
    
 </div>
 
-<div class="flex mb-10"> 
+<div class="hidden md:flex my-10"> 
+    {% include 'all_books.html' %} 
+    {% include 'categories.html' %}
+</div>
+<div class="flex flex-col-reverse md:hidden  my-10"> 
     {% include 'all_books.html' %} 
     {% include 'categories.html' %}
 </div>

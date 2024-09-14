@@ -29,7 +29,7 @@ SECRET_KEY = env('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-CSRF_TRUSTED_ORIGINS = ['https://library-management-system-2z2w.onrender.com', 'https://*.127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://library-management-system-2z2w.onrender.com', 'http://127.0.0.1:8000']
 
 
 # Application definition
@@ -41,12 +41,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
+    # 'crispy_bootstrap5',
     'core',
     'accounts',
     'books',
     'transactions',
-    'crispy_forms',
-    'crispy_bootstrap5',
+    
     'django.contrib.humanize',
 ]
 
@@ -65,6 +66,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Library_Management_System.urls'
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'profile'
+LOGOUT_REDIRECT_URL = 'home'
 
 TEMPLATES = [
     {

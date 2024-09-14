@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes ani {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* banner section */
+.carousel {
+    height: 70vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    overflow: hidden;
+}
+
+.item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.7s ease-in-out;
+}
+
+.item.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.img-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info-box {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    color: #ffffff;
+    text-align: left;
+}
+
+.info-item h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.info-item p {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #052b4e;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #0a2042;
+}
+
+.thumb {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    list-style: none;
+    z-index: 100;
+}
+
+.thumb li {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin: 15px 0;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border 0.3s ease;
+}
+
+.thumb li.active,
+.thumb li:hover {
+    animation: ani 0.5s ease-in-out;
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+/* responsive */
+/* small device  */
+
+@media screen and (max-width: 600px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    /* banner-section */
+    .carousel {
+        height: 60vh;
+        padding: 0 10px;
+    }
+
+    .info-box {
+        left: 5%;
+        width: 90%;
+        text-align: start;
+        transform: translateY(-40%);
+        padding: 10px;
+    }
+
+    .info-item h2 {
+        font-size: 1.8rem;
+    }
+
+    .info-item p {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+    }
+
+    .thumb {
+        right: 2%;
+    }
+
+    .thumb li {
+        width: 40px;
+        height: 40px;
+    }
+
+
+}
