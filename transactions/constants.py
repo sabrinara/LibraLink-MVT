@@ -7,7 +7,7 @@ RECEIVED = 6
 
 TRANSACTION_TYPE = (
     (DEPOSIT, 'Deposite'),
-    (BORROWED, 'borrowed'),
+    (BORROWED, 'Borrowed'),
     (LOAN, 'Loan'),
     (RETURNED, 'Returned'),
     (RECEIVED, 'Received'),
