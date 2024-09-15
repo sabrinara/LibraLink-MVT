@@ -1,37 +1,49 @@
-{% extends 'base.html' %} {% block head_title %}{{ title }}{% endblock %} {% block content %}
 
-<div class="w-full flex mt-5 justify-center ">
-    <div class="bg-white w-5/12 rounded-lg">
+{% extends 'base.html' %} 
+{% load static %}
+{% block head_title %}{{ title }}{% endblock %}
+{% block content %}
+<div class=" ">
+    <div class="bg-white  rounded-lg">
         {% if title == 'Request For Loan' %}
         <div><a class="font-bold text-blue text-center pb-5 pt-10 px-5" href="">View All Loan
                 List</a></div>
         {% elif title == 'Withdraw Money' %}
         {% include 'messages.html' %}
         {% endif %}
-
-        <h1 class="font-bold text-3xl text-center pb-5 pt-10 px-5">{{ title }}</h1>
-        <form method="post" class="px-8 pt-6 pb-8 mb-4">
-            {% csrf_token %}
-
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="amount">
-                    Amount
-                </label>
-                <input
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight border rounded-md border-gray-500 focus:outline-none focus:shadow-outline"
-                    name="amount" id="amount" type="number" required placeholder="Amount">
+<h1 class="font-bold text-4xl text-center pb-5 pt-10 px-5 text-blue-800">{{ title }}</h1>
+        <div class="flex flex-col md:flex-row justify-center items-center">
+            <div class="w-full ">
+            
+                <img src="{% static '../static/deposit.jpg' %}" alt="Deposit" class="h-96 w-full">
+            
             </div>
-            {% if form.amount.errors %} {% for error in form.amount.errors %}
-            <p class="text-red-600 text-sm italic pb-2">{{ error }}</p>
-            {% endfor %} {% endif %}
-            <div class="flex w-full justify-center">
-                <button
-                    class="bg-blue-900 text-white hover:text-blue-900 hover:bg-white border border-blue-900 font-bold px-4 py-2 rounded-lg"
-                    type="submit">
-                    Submit
-                </button>
+            <div class="w-full ">
+             
+                <form method="post" class="px-8 pt-6 pb-6 mb-4">
+                    {% csrf_token %}
+            
+                    <div class="mb-4 flex flex-col justify-center items-center md:items-start">
+                        <label class="block text-blue-800 text-lg font-bold mb-2" for="amount">
+                            Amount
+                        </label>
+                        <input
+                            class="md:w-full  border rounded py-2 px-3 text-gray-700 border rounded-md border-gray-500 focus:outline-none focus:shadow-outline"
+                            name="amount" id="amount" type="number" required placeholder="Amount">
+                    </div>
+                    {% if form.amount.errors %} {% for error in form.amount.errors %}
+                    <p class="text-red-600 text-sm italic pb-2">{{ error }}</p>
+                    {% endfor %} {% endif %}
+                    <div class="flex w-full justify-center">
+                        <button
+                            class="bg-blue-900 text-white hover:text-blue-900 hover:bg-white border border-blue-900 font-bold px-4 py-2 rounded-lg"
+                            type="submit">
+                            Submit
+                        </button>
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
 
 </div>
