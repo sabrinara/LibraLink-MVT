@@ -15,7 +15,6 @@ CATEGORY_CHOICES = (
     ('Fiction', 'Fiction'),
     ('Non-Fiction', 'Non-Fiction'),
     ('Biography', 'Biography'),
-    ('Autobiography', 'Autobiography'),
     ('Art', 'Art'),
     ('Philosophy', 'Philosophy'),
     ('Science', 'Science'),

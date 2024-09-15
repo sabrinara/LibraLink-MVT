@@ -1,31 +1,33 @@
-<div class="container w-3/4 grid grid-cols-1 md:grid-cols-2 gap-2 ">
-    {% for book in books %}
-    <div class="max-w-sm w-full lg:max-w-full lg:flex">
-    <div class="flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" >
-        {% if book.image %}
-            <img src="{{ book.image.url }}" alt="{{ book.title }} Image" class="w-full h-48 md:h-64 object-cover">
-        {% else %}
-            <p class="h-48 bg-gray-300 flex items-center justify-center">No image available.</p>
-        {% endif %}
+<div class="mx-10 grid grid-cols-1 md:grid-cols-3 gap-2 ">
+  {% for book in books %}
+  <div class="max-w-sm w-full lg:max-w-full lg:flex transition duration-200 transform hover:-translate-y-2">
+    <div class="flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden">
+      {% if book.image %}
+      <img src="{{ book.image.url }}" alt="{{ book.title }} Image" class="w-full h-48 md:h-64 object-cover">
+      {% else %}
+      <p class="h-48 bg-gray-300 flex items-center justify-center">No image available.</p>
+      {% endif %}
     </div>
-    <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-2 flex flex-col justify-between leading-normal h-48 md:h-64">
+    <div
+      class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-2 flex flex-col justify-between h-48 md:h-64 ">
       <div class="mb-2">
-        <h2 class="font-bold text-lg mb-2">{{ book.title }}</h2>
-        <p class=" mb-1">{{ book.description }}</p>
-        <p class="text-red-500 font-bold">Price:{{ book.price }}$</p>
-        <p class="mb-3">Category: {{ book.categories }}</p>
-        <a href="{% url 'details_book' book.id %}" class="text-white bg-blue-600 hover:bg-green-800 px-4 py-2 rounded">View Details</a>
+        <h2 class="font-bold text-xl mb-1">{{ book.title }}</h2>
+        <p class="text-sm">{{ book.description|truncatewords:80 }}</p>
       </div>
-      
+      <div class="flex items-center justify-between">
+
+        <p class="font-bold text-blue-800"> {{ book.categories }}</p>
+        <p class=" font-bold"><span class="text-red-800">{{ book.price }}$</span></p>
+      </div>
+      <a href="{% url 'details_book' book.id %}"
+        class="font-bold text-blue-800 bg-gradient-to-b from-white to-blue-300 hover:from-blue-800 hover:to-blue-900 hover:text-white text-center px-4 py-2 rounded">View Details</a>
     </div>
-    
+
   </div>
-{% endfor %}
+  {% endfor %}
 </div>
 <script>
-    function submitForm() {
-        document.getElementById("categoryFilterForm").submit();
-    }
+  function submitForm() {
+    document.getElementById("categoryFilterForm").submit();
+  }
 </script>
-
-

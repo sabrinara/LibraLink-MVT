@@ -1,9 +1,16 @@
-<div class="w-1/4 bg-blue-300 rounded p-4 mx-2">
-    <div class="container mx-auto flex flex-col items-start justify-between p-2">
-        <div class="space-x-4 space-y-2">
-            <a href="{% url 'home' %}" class="block text-3xl font-bold text-center">All Categories</a>
+<div class="bg-gray-100 rounded-lg shadow-lg p-6 m-4">
+    <div class="flex flex-col items-center justify-center">
+        <div class="w-full mb-4 text-center">
+            <a href="{% url 'home' %}" class="block text-4xl font-extrabold tracking-wide text-blue-800">
+                All Categories
+            </a>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-10 gap-2 w-full">
             {% for category in categories %}
-                <a href="{% url 'books_filter' book_category=category %}" class="block bg-blue-500 hover:bg-blue-900 font-semibold text-white p-2  rounded">{{ category }}</a>
+            <a href="{% url 'books_filter' book_category=category %}"
+                class="block bg-white border border-gray-300 hover:shadow-lg hover:border-blue-400 rounded-lg px-4 py-2 text-center transition duration-200 transform hover:-translate-y-1">
+                <span class="block  text-gray-800  ">{{ category }}</span>
+            </a>
             {% endfor %}
         </div>
     </div>
