@@ -17,7 +17,7 @@
 
 
 ### Getting Started
-To run NewsQuest locally, follow these steps:
+To run LibraLink locally, follow these steps:
 - Clone the repository to your local machine.
 - Install dependencies
 - setup env file
