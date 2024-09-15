@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block head_title %}{{ title }}{% endblock %} {% block content %}
 
-<div class="w-full flex mt-5 justify-center ">
+<div class="w-full h-fit flex mt-5 justify-center ">
     <div class="bg-white w-5/12 rounded-lg">
         {% if title == 'Request For Loan' %}
         <div><a class="font-bold text-blue text-center pb-5 pt-10 px-5" href="">View All Loan
@@ -14,7 +14,7 @@
             {% csrf_token %}
 
             <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="amount">
+                <label class="text-gray-700 text-sm font-bold mb-2" for="amount">
                     Amount
                 </label>
                 <input

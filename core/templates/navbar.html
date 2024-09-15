@@ -1,5 +1,5 @@
 {% load static %}
-<nav class="flex items-center justify-between flex-wrap py-4 px-1 md:px-10">
+<nav class="flex items-center justify-between flex-wrap py-4 px-1 md:px-10 bg-gradient-to-b from-white to-blue-300">
     <div class="flex items-center">
         <a href="{% url 'home' %}">
             <img src="{% static '../static/logo.png' %}" width="50px" height="50px">
@@ -22,7 +22,7 @@
     </div>
 
     <!-- Navigation links -->
-    <div id="dropmenu" class="w-full hidden lg:flex lg:items-center lg:w-auto ">
+    <div id="dropmenu" class="w-full hidden lg:flex lg:items-center lg:w-auto text-sm ">
         <ul class="lg:flex lg:items-center lg:justify-between lg:space-x-2">
             <!-- Home link -->
             <li>
