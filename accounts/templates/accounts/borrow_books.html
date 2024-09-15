@@ -1,9 +1,9 @@
-<div class="container mt-5 mb-20">
+<div class="mx-4 md:mx-10 mt-5 mb-20">
     {% if books %}
-    <h2 class="text-center text-2xl font-bold mb-4">Bought Books-</h2>
+    <h2 class="text-center text-2xl font-bold mb-4 text-blue-800">Bought Books-</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {% for book in books %}
-        <div class="max-w-sm bg-white rounded overflow-hidden shadow-lg">
+        <div class="max-w-sm bg-white rounded overflow-hidden shadow-lg transition ease-in-out duration-300 ">
             {% if book.image %}
             <img src="{{ book.image.url }}" alt="{{ book.title }} Image" class="w-full h-48 object-cover">
             {% else %}

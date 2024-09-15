@@ -3,20 +3,22 @@
 {% block head_title %}LibraLink - Profile{% endblock %}
 
 {% block content %}
-<div class="bg-white p-4 rounded-xl my-6">
+<div class="bg-white p-4 rounded-xl my-6 mx-4 md:mx-10">
     <div class="flex items-center justify-between">
-        <h4 class="font-bold text-2xl text-left pb-2">
-            Account: {{request.user.account.account_no}}
+        <h4 class="hidden md:flex font-bold text-2xl text-left pb-2 text-blue-900">
+            Account No: {{request.user.account.account_no}}
         </h4>
-        <a href="{% url 'update_profile' %}" class="bg-blue-700 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+       <div class="flex items-center">
+        <a href="{% url 'update_profile' %}" class="bg-gradient-to-b from-white to-blue-300 border-2 border-blue-200 text-blue-900 font-bold py-2 px-4 rounded">
             Update Profile
         </a>
-        <a href="{% url 'change_pass' %}" class="bg-blue-700 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2">
+        <a href="{% url 'change_pass' %}" class="bg-gradient-to-b from-white to-blue-300 border-2 border-blue-200 text-blue-900 font-bold py-2 px-4 rounded ml-2">
             Change Password
         </a>
+       </div>
     </div>
 </div>
-<div class="bg-white p-4 rounded-xl my-6 text-center ">
+<div class="bg-white p-4 rounded-xl my-6 text-center text-blue-800">
   <h2 class="text-2xl font-bold mb-2">Borrowing History:</h2>
   <ul class="list-inside">
       {% for transaction in transaction_history %}
