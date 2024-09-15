@@ -1,9 +1,9 @@
-{% extends 'base.html' %} 
-{% load static %} 
+{% extends 'base.html' %}
+{% load static %}
 
-{% block head_title %}LibraLink{% endblock %} 
+{% block head_title %}LibraLink{% endblock %}
 {% block content %}
-<div class="" >
+<div class="">
     <!-- <div class="w-full lg:w-1/2 lg:py-6 text-center ">
         <img class="rounded-2xl" src="{% static '../static/img.jpg' %}" />
     </div> -->
@@ -11,61 +11,61 @@
     <div class="carousel">
         <div class="item active">
             <div class="img-box">
-                <img src="{% static '../static/img.jpg' %}" alt="Leopard Lily - Nature Banner" class="">
+                <img src="{% static '../static/img4.jpg' %}" alt="Library Banner" class="">
             </div>
             <div class="info-box">
                 <div class="info-slider">
                     <div class="info-item">
-                        <h2>Leopard Lily</h2>
-                        <p>The symbol of strength and resilience. Purify your <br> home with leopard lily plants.</p>
-                        <a href="#" class="btn">View More</a>
+                        <h2>Library Manager</h2>
+                        <p>"Libraries are the thin red line between civilization </br>and barbarism."
+                            — Neil Gaiman</p>
+                        <!-- <a href="#" class="btn">View More</a> -->
                     </div>
                 </div>
             </div>
         </div>
-    
+
         <div class="item">
             <div class="img-box">
-                <img src="{% static '../static/img2.jpg' %}" alt="Leopard Lily - Nature Banner">
+                <img src="{% static '../static/img2.jpg' %}" alt="Library Banner">
             </div>
             <div class="info-box">
                 <div class="info-slider">
                     <div class="info-item">
-                        <h2>Calathea Plant</h2>
-                        <p>It is a long established fact a reader by the
-                            <br>readable content looking.
+                        <h2>Library Manager</h2>
+                        <p>"Libraries will get you through times of no money <br> better than money will get you through times of <br>no libraries."
+                        — Anne Herbert
                         </p>
-                        <a href="#" class="btn">View More</a>
+                        <!-- <a href="#" class="btn">View More</a> -->
                     </div>
                 </div>
             </div>
         </div>
-    
+
         <div class="item">
             <div class="img-box">
-                <img src="{% static '../static/img4.jpg' %}" alt="Leopard Lily - Nature Banner">
+                <img src="{% static '../static/img5.jpg' %}" alt="Library Banner">
             </div>
             <div class="info-box">
                 <div class="info-slider">
                     <div class="info-item">
-                        <h2>Spring Plant</h2>
-                        <p>We’re Spring Plant, When you’ve got your health,
-                            <br>
-                            you got everything.
+                        <h2>Library Manager</h2>
+                        <p>"A library is not a luxury but one of the necessities <br> of life."
+                        — Henry Ward Beecher
                         </p>
-                        <a href="#" class="btn">View More</a>
+                        <!-- <a href="#" class="btn">View More</a> -->
                     </div>
                 </div>
             </div>
         </div>
-    
+
         <ul class="thumb ">
-            <li class="active"><img src="{% static '../static/img.jpg' %}" alt="Thumbnail for Leopard Lily"></li>
-            <li><img src="{% static '../static/img2.jpg' %}" alt="Thumbnail for Leopard Lily"></li>
-            <li><img src="{% static '../static/img4.jpg' %}" alt="Thumbnail for Leopard Lily"></li>
+            <li class="active"><img src="{% static '../static/img4.jpg' %}" alt="Thumbnail "></li>
+            <li><img src="{% static '../static/img2.jpg' %}" alt="Thumbnail "></li>
+            <li><img src="{% static '../static/img5.jpg' %}" alt="Thumbnail "></li>
         </ul>
     </div>
-<!-- new add end  -->
+    <!-- new add end  -->
     <!-- <div class="flex flex-col w-full lg:w-1/2 justify-center items-center pt-10 pb-20 px-6 bg-white rounded-2xl bg-opacity-70 mx-3">
         <h1 class="font-bold text-4xl my-4 text-blue-500">Welcome to LibraLink </h1>
         <p class="leading-normal ">
@@ -73,15 +73,15 @@
         </p>
     </div> -->
 
-   
+
 </div>
 
-<div class="hidden md:flex my-10"> 
-    {% include 'all_books.html' %} 
+<div class="hidden md:flex my-10">
+    {% include 'all_books.html' %}
     {% include 'categories.html' %}
 </div>
-<div class="flex flex-col-reverse md:hidden  my-10"> 
-    {% include 'all_books.html' %} 
+<div class="flex flex-col-reverse md:hidden  my-10">
+    {% include 'all_books.html' %}
     {% include 'categories.html' %}
 </div>
 
