@@ -1,0 +1,18 @@
+{% load static %}
+<div class="flex flex-col md:flex-row-reverse items-center gap-10 mx-4 md:mx-10 mt-20">
+    <div class="w-full md:w-1/2 bg-transparent shadow-md md:px-16 md:py-20 py-10">
+        <h1 class="text-4xl font-bold text-start text-blue-800 my-2">Explore Our <span
+                class="text-blue-500">Services</span></h1>
+        <ul class="list-disc ml-10 text-blue-900">
+            <li class="text-base font-bold text-start">Personalized Book Recommendations tailored to your interests.</li>
+            <li class="text-base font-bold text-start">Easy Online Book Reservations and renewals.</li>
+            <li class="text-base font-bold text-start">Access to Exclusive Research Databases and Journals.</li>
+            <li class="text-base font-bold text-start">Free Workshops and Events for Skill Development.</li>
+            <li class="text-base font-bold text-start">24/7 Digital Support for Library-related Queries.</li>
+        </ul>
+    </div>
+    <div class="w-full md:w-1/2 ratio ratio-16x9">
+        <img src="{% static '../static/img3.jpg' %}" class="rounded" style="height: 400px; width: 100%;" loading="lazy"
+            alt="Our Services" />
+    </div>
+</div>

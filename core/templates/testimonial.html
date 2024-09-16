@@ -1,0 +1,48 @@
+{% load static %}
+<div class="flex flex-col items-center bg-gray-100 py-10">
+    <h2 class="text-4xl font-bold text-blue-800 mb-8">What Our Users Say</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <!-- Testimonial 1 -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="flex items-center gap-4">
+                <img src="{% static '../static/user1.jpg' %}" alt="User 1" class="w-16 h-16 rounded-full object-cover">
+                <div>
+                    <h3 class="text-xl font-bold text-blue-500">John Doe</h3>
+                    <p class="text-sm text-gray-500">Library Member</p>
+                </div>
+            </div>
+            <p class="mt-4 text-blue-900">
+                "LibraLink has completely transformed how I access books. The digital catalog is easy to browse, and borrowing books has never been this efficient!"
+            </p>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="flex items-center gap-4">
+                <img src="{% static 'user2.jpg' %}" alt="User 2" class="w-16 h-16 rounded-full object-cover">
+                <div>
+                    <h3 class="text-xl font-bold text-blue-500">Jane Smith</h3>
+                    <p class="text-sm text-gray-500">Library Administrator</p>
+                </div>
+            </div>
+            <p class="mt-4 text-blue-900">
+                "Managing the library has never been easier. LibraLink’s intuitive interface allows me to handle inventory, track book returns, and communicate with users seamlessly."
+            </p>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="flex items-center gap-4">
+                <img src="{% static '../static/user3.jpg' %}" alt="User 3" class="w-16 h-16 rounded-full object-cover">
+                <div>
+                    <h3 class="text-xl font-bold text-blue-500">Emily Johnson</h3>
+                    <p class="text-sm text-gray-500">Frequent Borrower</p>
+                </div>
+            </div>
+            <p class="mt-4 text-blue-900">
+                "LibraLink’s automated reminders are a life-saver! No more late fees, and I love that I can browse and reserve books online."
+            </p>
+        </div>
+    </div>
+</div>
