@@ -1,0 +1,18 @@
+{% load static %}
+<div class="flex flex-col md:flex-row items-center gap-10 mx-4 md:mx-10 mt-10">
+    <div class="w-full md:w-1/2 bg-transparent shadow-md md:px-20 md:py-20 py-10">
+        <h1 class="text-4xl font-bold text-start text-blue-900 my-2">Why Choose <span
+                class="text-blue-600">LibraLink</span>?</h1>
+        <ul class="list-disc ml-10 text-blue-900">
+            <li class="text-lg font-bold text-start">Effortlessly manage your book collection and inventory.</li>
+            <li class="text-lg font-bold text-start">Streamlined borrowing and returning system for users.</li>
+            <li class="text-lg font-bold text-start">Access a vast digital catalog of eBooks and resources.</li>
+            <li class="text-lg font-bold text-start">Keep track of overdue books with automated reminders.</li>
+            <li class="text-lg font-bold text-start">User-friendly interface for both administrators and members.</li>
+        </ul>
+    </div>
+    <div class="w-full md:w-1/2 ratio ratio-16x9">
+        <img src="{% static '../static/img.jpg' %}" class="rounded" style="height: 500px; width: 100%;" loading="lazy"
+            alt="Why Choose LibraLink" />
+    </div>
+</div>

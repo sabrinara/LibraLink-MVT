@@ -1,6 +1,6 @@
-<div class="mx-10 grid grid-cols-1 md:grid-cols-3 gap-2 ">
+<div class="mx-10 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-2 ">
   {% for book in books %}
-  <div class="max-w-sm w-full lg:max-w-full lg:flex transition duration-200 transform hover:-translate-y-2">
+  <div class="max-w-sm w-full lg:max-w-full lg:flex transition duration-200 transform hover:-translate-y-2 ">
     <div class="flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden">
       {% if book.image %}
       <img src="{{ book.image.url }}" alt="{{ book.title }} Image" class="w-full h-48 md:h-64 object-cover">
@@ -9,7 +9,7 @@
       {% endif %}
     </div>
     <div
-      class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-2 flex flex-col justify-between h-48 md:h-64 ">
+      class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-2 flex flex-col justify-between h-52 md:h-64 ">
       <div class="mb-2">
         <h2 class="font-bold text-xl mb-1">{{ book.title }}</h2>
         <p class="text-sm">{{ book.description|truncatewords:80 }}</p>
